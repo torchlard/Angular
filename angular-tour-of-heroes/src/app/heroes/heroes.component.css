@@ -1,0 +1,57 @@
+.selected {
+  background-color: #CFD8DF !important;
+  color: white;
+}
+
+.heroes {
+  margin: 5px;
+  color: black;
+  width: 15em;
+}
+
+.heroes li {
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+
+  position: relative;
+  left: 0;
+  border-radius: 4px;
+  background-color: #eeeeee;
+
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.heroes li.selected:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.heroes .text {
+  position: relative;
+  top: -3px;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
