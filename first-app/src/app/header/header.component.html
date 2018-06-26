@@ -1,0 +1,33 @@
+<div class="adv">
+  <button class="adv-btn">FREE SHIPPING!</button>
+  <span class="adv-msg">{{ adv_message }}</span>
+</div>
+
+<div>
+  <img [src]="company_logo">
+
+  <ul class="criteria">
+    <li *ngFor="let criteria of criterias">
+      {{ criteria }}
+      <app-filter-popover [filter-type]="criteria"></app-filter-popover>
+    </li>
+    <div class="cart-container">
+      <img [src]="cart_logo">
+      <span>Cart</span>
+      <div class="cart-buy">
+        {{cart.buy}}
+      </div>
+    </div>
+  </ul>
+
+  <div class="search-box">
+    <form>
+      <img [src]="search-icon">
+      <input type="text" name="search" placeholder="Search">
+    </form>
+  </div>
+
+</div>
+
+
+

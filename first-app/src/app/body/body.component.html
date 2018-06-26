@@ -1,0 +1,32 @@
+
+<section class="home-style-section">
+
+  <div class="style-collection">
+    <div class="style-container" *ngFor="let style of styles">
+      <img [src]="style.picUrl">
+      <span class="style-title">{{style.title}}</span>
+    </div>
+    
+  </div>
+  
+  <h1>Start dressing better</h1>
+</section>
+
+<section class="home-style-content">
+  <div class="type-container">
+    <div class="type-item" *ngFor="let type of types">
+      <span class="type-item-title">{{type.title}}</span>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="type-intro">
+      We started designing and selling neckties in 1971. After 46 years, we're
+      still family-owned and operated.
+    </h1>
+    <a>VIEW OUR STORY</a>
+  </div>
+</section>
+
+
+

@@ -1,0 +1,41 @@
+<div class="filter-container">
+
+  <div class="wrapper" *ngFor="let item of filter_items">
+    <div [ngSwitch]="filter.filterType">
+
+      <div *ngSwitchCase="collection">
+          <img [src]={item.pic}>
+          <span class="filter-title">{{item.title}}</span>
+          <span class="filter-description">{{item.description}}</span>
+      </div>
+    
+      <div *ngSwitchCase="color">
+        <div class="color-wrapper">
+          <span class="filter-description">{{item.description}}</span>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="width">
+        <img [src]={item.pic}>
+        <span class="filter-title">{{item.title}}</span>
+        <span class="filter-description">{{item.description}}</span>
+        <span class="filter-size">{{item.size}}</span>
+      </div> 
+
+    </div>
+  </div>
+
+  <button class="button">{{filter.showMore}}</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
