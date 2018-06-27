@@ -9,6 +9,9 @@ import { FilterPopoverComponent } from './filter-popover/filter-popover.componen
 import { AppRoutingModule } from './/app-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import {InMemoryDataService} from './in-memory-data.service'
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,16 @@ import {InMemoryDataService} from './in-memory-data.service'
     BodyComponent,
     FooterComponent,
     FilterPopoverComponent,
-    ProductListComponent
+    ProductListComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {delay: 50}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

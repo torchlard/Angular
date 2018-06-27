@@ -1,0 +1,120 @@
+/*** layout */
+
+.adv {
+  display: flex;
+  flex-direction: row;
+  padding: 7px 10px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+@media only screen and (min-width: 757px ) {
+  .adv-msg-long {
+    display: initial;
+  }
+  .adv-msg-short {
+    display: none;
+  }
+}
+@media only screen and (max-width: 757px) {
+  .adv-msg-long {
+    display: none
+  }
+  .adv-msg-short {
+    display: initial
+  }
+}
+
+
+.nav {
+  display: flex;
+}
+
+@media only screen and (min-width: 915px){
+  #company-logo {
+    height: 88px;
+  }
+}
+@media only screen and (max-width: 915px){
+
+}
+@media only screen and (max-width: 590px){
+
+}
+@media only screen and (min-width: 461px) {
+  .button-array {
+    display: none;
+  }
+  .nav {
+    padding: 15px 10px;
+  }
+}
+
+@media only screen and (max-width: 461px) {
+  .button-array {
+    display: initial;
+  }
+}
+
+
+/*** details, decoration */
+/* top */
+.adv-background {
+  background-color: #fa6938;
+}
+.adv {
+  vertical-align: middle;
+}
+.adv:hover {
+  background-color: var(--button-hover-color)
+}
+
+.adv .adv-btn, .adv .adv-msg {
+  color: white;
+}
+.adv .adv-btn {
+  font-size: 12px;
+  background-color: #c8542d;
+  padding: 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+  margin-right: 15px;
+}
+
+.adv-msg-long .sep, .adv-msg-short {
+  margin: 0 15px;
+  vertical-align: middle;
+  white-space: nowrap;
+  /* text-shadow: 0px 0.5px #ddd; */
+}
+.adv-msg-short {
+  margin-right: 30px;
+  margin-left: 0px;
+  /* width: 300px; */
+}
+
+
+/* bottom */
+
+
+
+.cart-container img, .search-box img {
+  width: 20px;
+  height: 20px;
+}
+
+.criteria {
+  display: flex;
+  flex-direction: row;
+}
+
+.criteria li {
+  margin: 10px;
+  list-style-type: none;
+}
+
+.criteria li app-filter-popover {
+  position: absolute;
+}
+
+
+

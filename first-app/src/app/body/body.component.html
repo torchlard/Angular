@@ -3,8 +3,10 @@
 
   <div class="style-collection">
     <div class="style-container" *ngFor="let style of styles">
-      <img [src]="style.picUrl">
-      <span class="style-title">{{style.title}}</span>
+      <a routerLink="/{{style.type}}/{{style.id}}">
+        <img [src]="style.picUrl">
+        <span class="style-title">{{style.title}}</span>
+      </a>
     </div>
     
   </div>
@@ -14,8 +16,8 @@
 
 <section class="home-style-content">
   <div class="type-container">
-    <div class="type-item" *ngFor="let type of types">
-      <span class="type-item-title">{{type.title}}</span>
+    <div class="type-item" *ngFor="let item of displays">
+      <span class="type-item-title">{{item.title}}</span>
     </div>
   </div>
 

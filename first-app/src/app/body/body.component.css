@@ -1,0 +1,9 @@
+.style-container img {
+  width: 80px;
+}
+
+.style-collection {
+  display: flex;
+  flex-direction: row;
+}
+

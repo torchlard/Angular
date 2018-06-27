@@ -1,32 +1,46 @@
 <div class="filter-container">
-
-  <div class="wrapper" *ngFor="let item of filter_items">
-    <div [ngSwitch]="filter.filterType">
-
-      <div *ngSwitchCase="collection">
-          <img [src]={item.pic}>
-          <span class="filter-title">{{item.title}}</span>
-          <span class="filter-description">{{item.description}}</span>
-      </div>
+  <!-- switch to show differential display -->
+  <div [ngSwitch]="filter.type">
     
-      <div *ngSwitchCase="color">
-        <div class="color-wrapper">
-          <span class="filter-description">{{item.description}}</span>
+    <div *ngSwitchCase="CRITERIA.collection">
+      <div class="items-container">
+        <div class="wrapper" *ngFor="let item of filter_items">
+            <img [src]="item.pic">
+            <span class="filter-title">{{item.title}}</span>
+            <span class="filter-description">{{item.description}}</span>
         </div>
       </div>
-
-      <div *ngSwitchCase="width">
-        <img [src]={item.pic}>
-        <span class="filter-title">{{item.title}}</span>
-        <span class="filter-description">{{item.description}}</span>
-        <span class="filter-size">{{item.size}}</span>
-      </div> 
-
+      <button class="button">Browse All {{filter.showMore}}</button>
     </div>
-  </div>
+    
+    <div *ngSwitchCase="CRITERIA.color">
+      <div class="items-container">
+        <div class="wrapper" *ngFor="let item of filter_items">
+          <div class="color-wrapper">
+            <span class="filter-description">{{item.description}}</span>
+          </div>
+        </div>
+      </div>
+      <button class="button">Browse All {{filter.showMore}}</button>
+    </div>
+  
+  
+    <div *ngSwitchCase="CRITERIA.width">
+      <div class="items-container">
+        <div class="wrapper" *ngFor="let item of filter_items">
+          <img [src]="item.pic">
+          <span class="filter-title">{{item.title}}</span>
+          <span class="filter-description">{{item.description}}</span>
+          <span class="filter-size">{{item.size}}</span>
+        </div>
+      </div>
+      <button class="button">Browse All {{filter.showMore}}</button>
+    </div> 
 
-  <button class="button">{{filter.showMore}}</button>
+  </div>  
+
 </div>
+
 
 
 

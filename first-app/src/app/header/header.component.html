@@ -1,30 +1,43 @@
-<div class="adv">
-  <button class="adv-btn">FREE SHIPPING!</button>
-  <span class="adv-msg">{{ adv_message }}</span>
+<div class="adv-background">
+  <div class="adv main-centering">
+    <div class="adv-btn">FREE SHIPPING!</div>
+    <span class="adv-msg adv-msg-long">
+      <span class="sep" *ngFor="let msg of adv_message_long">{{msg}}</span>
+    </span>
+    <span class="adv-msg adv-msg-short">{{ adv_message_short }}</span>
+  </div>
 </div>
 
-<div>
-  <img [src]="company_logo">
+<div class="nav main-centering">
+  <img id="company-logo" [src]="company_logo">
 
   <ul class="criteria">
-    <li *ngFor="let criteria of criterias">
+    <li *ngFor="let criteria of criterias" (mouseover)="mouseOver(criteria)" 
+      (mouseleave)="mouseOver('')" >
       {{ criteria }}
-      <app-filter-popover [filter-type]="criteria"></app-filter-popover>
+      <app-filter-popover *ngIf="activate(criteria)" [filter_type]="criteria"></app-filter-popover>
     </li>
-    <div class="cart-container">
-      <img [src]="cart_logo">
-      <span>Cart</span>
-      <div class="cart-buy">
-        {{cart.buy}}
-      </div>
-    </div>
   </ul>
+  
+  <div class="cart-container">
+    <img [src]="cart_logo">
+    <span>Cart</span>
+    <div class="cart-buy">
+      {{cart.buy}}
+    </div>
+  </div>
 
   <div class="search-box">
     <form>
-      <img [src]="search-icon">
+      <img [src]="search_icon">
       <input type="text" name="search" placeholder="Search">
     </form>
+  </div>
+
+  <div class="button-array">
+    <button id="cart-btn"></button>
+    <button id="person-btn"></button>
+    <button id="search-btn"></button>
   </div>
 
 </div>

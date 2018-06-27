@@ -1,0 +1,13 @@
+.wrapper img {
+  width: 100px;
+  height: 100px;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
