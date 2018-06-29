@@ -11,27 +11,39 @@
 <div class="nav main-centering">
   <img id="company-logo" [src]="company_logo">
 
+  <hr class="division">
   <ul class="criteria">
-    <li *ngFor="let criteria of criterias" (mouseover)="mouseOver(criteria)" 
+    <li class="criteria-item" *ngFor="let criteria of criterias" (mouseover)="mouseOver(criteria)" 
       (mouseleave)="mouseOver('')" >
       {{ criteria }}
+      <div class="fix-pos">
+        <div class="tooltip" *ngIf="activate(criteria)"></div>
+      </div>
       <app-filter-popover *ngIf="activate(criteria)" [filter_type]="criteria"></app-filter-popover>
     </li>
-  </ul>
-  
-  <div class="cart-container">
-    <img [src]="cart_logo">
-    <span>Cart</span>
-    <div class="cart-buy">
-      {{cart.buy}}
-    </div>
-  </div>
+  </ul>  
 
-  <div class="search-box">
-    <form>
-      <img [src]="search_icon">
-      <input type="text" name="search" placeholder="Search">
-    </form>
+  <div class="right-block">
+    <div class="right-block--up">
+      <a routerLink="/" class="account">SIGN IN</a>
+      <a routerLink="/" class="account">REGISTER</a>
+    </div>
+
+    <div class="right-block--low ">
+      <a routerLink="/" class="cart-container" (mouseover)="mouseOver('others')" (mouseleave)="mouseOver('')">
+        <img [src]="cart_logo">
+        <span class="cart-txt">Cart</span>
+        <span class="cart-buy">{{cart.buy}}</span>
+        <app-filter-popover *ngIf="activate('others')" [filter_type]="others"></app-filter-popover>
+      </a>
+
+      <div class="search-box">
+        <form class="search-form">
+          <img [src]="search_icon">
+          <input type="text" name="search" placeholder="Search">
+        </form>
+      </div>
+    </div>
   </div>
 
   <div class="button-array">
@@ -41,6 +53,41 @@
   </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

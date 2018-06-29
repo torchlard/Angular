@@ -13,7 +13,9 @@ export class FilterPopoverComponent implements OnInit {
 
   filter_items: Item[]
   filter = {type: '', showMore: ''}
+  tooltip_text = 'Your cart is empty.'
   CRITERIA = {collection: 'collection', color: 'color', width: 'width' }
+  others = 'others'
   
   readonly itemUrl = "assets/icon/"
   readonly collections: Item[] = [
@@ -77,10 +79,11 @@ export class FilterPopoverComponent implements OnInit {
         this.filter = { type: this.CRITERIA.collection, showMore: 'Fabrics'}
         break;
       case 'Pattern':
-      default:
         this.filter_items = this.patterns
         this.filter = { type: this.CRITERIA.collection, showMore: 'Patterns'}
         break;
+      default:
+        this.filter = { type: this.others, showMore: ''}
     }
   }
   

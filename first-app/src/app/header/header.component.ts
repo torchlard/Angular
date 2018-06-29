@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   popover_tap = ''
 
   readonly criterias = ['Collection', 'Color', 'Width', 'Fabric', 'Pattern']
+  readonly others = 'others'
   
   // variable should be initialized
   cart: Cart = {buy: 0}

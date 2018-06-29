@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  /* box-sizing: border-box; */
 }
 
 :root {
@@ -10,4 +11,19 @@
   max-width: 1137px;
   margin: 0 auto
 }
+
+a {
+  text-decoration: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  /* overflow-x: hidden; */
+}
+
+
+
 

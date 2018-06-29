@@ -4,20 +4,22 @@
     
     <div *ngSwitchCase="CRITERIA.collection">
       <div class="items-container">
-        <div class="wrapper" *ngFor="let item of filter_items">
+        <a class="wrapper" *ngFor="let item of filter_items" routerLink="/">
             <img [src]="item.pic">
-            <span class="filter-title">{{item.title}}</span>
-            <span class="filter-description">{{item.description}}</span>
-        </div>
+            <div class="filter-text">
+              <div class="filter-title">{{item.title}}</div>
+              <div class="filter-description">{{item.description}}</div>
+            </div>
+        </a>
       </div>
       <button class="button">Browse All {{filter.showMore}}</button>
     </div>
     
     <div *ngSwitchCase="CRITERIA.color">
       <div class="items-container">
-        <div class="wrapper" *ngFor="let item of filter_items">
+        <div class="color-container" *ngFor="let item of filter_items">
           <div class="color-wrapper">
-            <span class="filter-description">{{item.description}}</span>
+            <span class="color-description">{{item.description}}</span>
           </div>
         </div>
       </div>
@@ -29,13 +31,17 @@
       <div class="items-container">
         <div class="wrapper" *ngFor="let item of filter_items">
           <img [src]="item.pic">
-          <span class="filter-title">{{item.title}}</span>
-          <span class="filter-description">{{item.description}}</span>
-          <span class="filter-size">{{item.size}}</span>
+          <div class="filter-title">{{item.title}}</div>
+          <div class="filter-description">{{item.description}}</div>
+          <div class="filter-size">{{item.size}}</div>
         </div>
       </div>
       <button class="button">Browse All {{filter.showMore}}</button>
     </div> 
+
+    <div *ngSwitchDefault class="base">
+      <p>{{tooltip_text}}</p>
+    </div>
 
   </div>  
 

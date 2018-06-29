@@ -1,5 +1,5 @@
 /*** layout */
-
+/* top */
 .adv {
   display: flex;
   flex-direction: row;
@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   text-align: center;
 }
-@media only screen and (min-width: 757px ) {
+@media only screen and (min-width: 865px ) {
   .adv-msg-long {
     display: initial;
   }
@@ -15,7 +15,7 @@
     display: none;
   }
 }
-@media only screen and (max-width: 757px) {
+@media only screen and (max-width: 865px) {
   .adv-msg-long {
     display: none
   }
@@ -24,36 +24,131 @@
   }
 }
 
-
+/* bottom */
 .nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .criteria {
+  margin-right: auto;
+}
+.criteria {
+  padding: 10px 15px;
+  position: relative;
+}
+.division {
+  border: 0;
+  height: 1px;
+  background: #dddddd;
+  margin-top: 20px;
 }
 
+@media only screen and (min-width: 1008px) {
+  .criteria-item {
+    font-size: 23px;
+  }
+}
+@media only screen and (max-width: 1008px) and (min-width: 915px) {
+  .criteria-item {
+    font-size: 19px;
+  }
+}
 @media only screen and (min-width: 915px){
   #company-logo {
     height: 88px;
   }
+  .nav {
+    flex-wrap: nowrap;
+  }
+  .division {
+    display: none;
+  }
+  app-filter-popover {
+    width: 600px;
+    position: absolute;
+    top: 72px;
+    left: 0px;
+  }
+  .tooltip::before {
+    top: 4px;
+  }
 }
+  /* split to two lines */
 @media only screen and (max-width: 915px){
-
+  .criteria-item {
+    font-size: 23px;
+  }
+  #company-logo {
+    order: 1;
+    height: 60px;
+  }
+  .right-block {
+    order: 2;
+  }
+  .division {
+    width: 100%;
+    order: 3;
+  }
+  .criteria {
+    width: 100%;
+    order: 4;
+  }
+  .nav {
+    flex-wrap: wrap;
+  }
+  app-filter-popover {
+    width: 95vw;
+    position: absolute;
+    top: 64px;
+    left: 1vw;
+  }
+  .tooltip::before {
+    top: -4px;
+  }
 }
 @media only screen and (max-width: 590px){
-
+  #compang-logo {
+    width: 40px;
+  }
+  .criteria-item {
+    font-size: 16px;
+  }
 }
 @media only screen and (min-width: 461px) {
   .button-array {
     display: none;
   }
   .nav {
-    padding: 15px 10px;
+    padding: 15px 0px;
   }
+  
 }
 
 @media only screen and (max-width: 461px) {
   .button-array {
     display: initial;
   }
+  .right-block {
+    display: none;
+  }
+  .criteria-item {
+    font-size: 12px;
+  }
 }
+
+app-filter-popover {
+  
+}
+.tooltip::before {
+  content: " ";
+  position: absolute;
+  left: 40%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #000000 transparent;
+}
+
 
 
 /*** details, decoration */
@@ -64,13 +159,14 @@
 .adv {
   vertical-align: middle;
 }
-.adv:hover {
+.adv-background:hover {
   background-color: var(--button-hover-color)
 }
 
 .adv .adv-btn, .adv .adv-msg {
   color: white;
 }
+
 .adv .adv-btn {
   font-size: 12px;
   background-color: #c8542d;
@@ -79,12 +175,14 @@
   white-space: nowrap;
   margin-right: 15px;
 }
+.adv-background:hover .adv-btn  {
+  background-color: #312b83
+}
 
 .adv-msg-long .sep, .adv-msg-short {
   margin: 0 15px;
   vertical-align: middle;
   white-space: nowrap;
-  /* text-shadow: 0px 0.5px #ddd; */
 }
 .adv-msg-short {
   margin-right: 30px;
@@ -94,27 +192,107 @@
 
 
 /* bottom */
+.right-block {
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
+.cart-container {
+  display: inline-block;
+  white-space: nowrap;
+  border: 1px solid #e0e0e0;
+  padding: 5px;
+}
 
+.cart-container img, .cart-container span {
+  margin: 0 3px;
+}
 
 .cart-container img, .search-box img {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
+}
+
+.cart-txt {
+  font-size: 12px;
+}
+
+.cart-buy {
+  color: white;
+  background-color: #c8c8c8;
+  font-size: 11px;
+  padding: 3px;
+  position: relative;
+}
+.cart-buy::before {
+  content: " ";
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #c8c8c8 transparent transparent;
 }
 
 .criteria {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .criteria li {
-  margin: 10px;
+  margin: 0px;
+  padding: 10px 10px 20px 10px;
   list-style-type: none;
 }
 
-.criteria li app-filter-popover {
-  position: absolute;
+.fix-pos {
+  position: relative;
 }
+
+.right-block--low {
+  display: flex;
+}
+
+.right-block--up {
+  margin-bottom: 15px;
+}
+
+.right-block--up a {
+  margin: 0 10px;
+}
+.search-form {
+  position: relative;
+  box-shadow: 0 0 6px 1px #ccc;
+}
+
+.search-box {
+  margin-left: 10px;
+}
+
+.search-box img {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+.account {
+  font-size: 11px;
+  color: #a8a8a8;
+}
+
+.search-form input {
+  width: 132px;
+}
+.search-box input {
+  padding-left: 20px;
+}
+
+
+
+
+
 
 
 
